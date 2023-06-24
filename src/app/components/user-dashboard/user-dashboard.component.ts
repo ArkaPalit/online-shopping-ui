@@ -38,8 +38,7 @@ export class UserDashboardComponent {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   searchText = '';
-  dataForUser:any;
-
+  dataForUser: any;
 
   constructor(
     private router: Router,
@@ -88,7 +87,7 @@ export class UserDashboardComponent {
     let dialogRef = this.dialog.open(EditProductPopupComponent, {
       disableClose: true,
       data: {
-        tableData: tableData 
+        tableData: tableData,
       },
     });
   }
@@ -107,9 +106,9 @@ export class UserDashboardComponent {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
-}
+  }
 
-productDetails(productId) {
-  this.router.navigate(['product-deatils/'+productId]);
-}
+  productDetails(productId) {
+    this.router.navigate(['product-deatils/' + productId]);
+  }
 }
